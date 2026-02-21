@@ -36,5 +36,13 @@ Then navigate to `http://localhost:9090` in your browser.
 3. The GitHub Action will automatically build and deploy the new codelab.
 
 ## Hosting
-The codelab is hosted at the root of your GitHub Pages site.
-URL: `https://<YOUR_USERNAME>.github.io/<REPO_NAME>/`
+
+### GitHub Pages (Automated)
+The codelab is deployed to the `gh-pages` branch on every push.
+
+### Coolify (Static Site)
+This repository includes a `Dockerfile` for easy deployment on Coolify:
+1.  Create a new **Static Site** or **Docker-based** resource in Coolify.
+2.  Point it to this repository.
+3.  Coolify will automatically build the `Dockerfile`, which installs `claat`, generates the HTML, and serves it using Nginx.
+4.  No extra build command or publish directory needs to be configured in the Coolify UI.
