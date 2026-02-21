@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2026-02-21T14:53:23Z",
-  "id": "git-github-fundamentals",
-  "duration": 45,
-  "title": "Git and GitHub Fundamentals: Hackathon Survival Guide",
+  "updated": "2026-02-21T15:19:14Z",
+  "id": "git-github-hackathon-codelab",
+  "duration": 82,
+  "title": "Git \u0026 GitHub: The Hackathon Survival Kit",
   "authors": "Manjul Tamrakar",
-  "summary": "A high-energy guide to Git collaboration for hackathon teams.",
+  "summary": "A practical, hands-on guide to Git and GitHub for hackathon teams",
   "source": "git-github-codelab.md",
   "theme": "",
   "status": [
@@ -16,11 +16,12 @@
   ],
   "category": [
     "git",
-    "github"
+    "github",
+    "version-control"
   ],
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/Tamrakar182/git-codelab",
-  "url": "git-github-fundamentals"
+  "feedback": "https://github.com/Tamrakar182/git-codelab/issues",
+  "url": "git-github-hackathon-codelab"
 }
