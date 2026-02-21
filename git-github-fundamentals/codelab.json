@@ -1,0 +1,22 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2026-02-21T20:11:40+05:45",
+  "id": "git-github-fundamentals",
+  "duration": 23,
+  "title": "Git and GitHub Fundamentals",
+  "summary": "A comprehensive guide to Git and GitHub",
+  "source": "git-github-codelab.md",
+  "theme": "",
+  "status": null,
+  "category": [
+    "git",
+    "github"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "git-github-fundamentals"
+}
