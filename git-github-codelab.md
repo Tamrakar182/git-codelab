@@ -48,7 +48,7 @@ Every file you work on lives in one of three places at any given moment:
 
 **3. Repository (.git folder)**: The permanent, tamper-proof vault of all your snapshots (called *commits*). Once something is committed, it's safe.
 
-![Git Workflow](/assets/git-workflow-diagram.jpg)
+![Git Workflow](assets/git-workflow-diagram.jpg)
 
 ### The Commit: Your Project's Checkpoint
 

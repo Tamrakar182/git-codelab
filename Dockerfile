@@ -19,7 +19,7 @@ RUN /go/bin/claat export git-github-codelab.md
 FROM nginx:stable-alpine
 
 # Copy the exported content to the default Nginx public directory
-COPY --from=builder /app/git-github-fundamentals /usr/share/nginx/html
+COPY --from=builder /app/git-github-hackathon-codelab /usr/share/nginx/html
 
 EXPOSE 80
 

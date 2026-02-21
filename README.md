@@ -21,7 +21,7 @@ Run the following command to export your markdown file to HTML:
 ```bash
 claat export git-github-codelab.md
 ```
-This will create a directory (e.g., `git-github-fundamentals`) containing the static site.
+This will create a directory (e.g., `git-github-hackathon-codelab`) containing the static site.
 
 ### 4. Preview
 You can use `claat` to serve the files locally:
