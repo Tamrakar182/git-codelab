@@ -39,7 +39,7 @@ jobs:
         run: |
           mkdir -p out
           # Move everything from the generated folder to the root of 'out'
-          cp -r git-github-hackathon-codelab/* out/
+          cp -r git-github-academic-codelab/* out/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

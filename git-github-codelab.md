@@ -1,32 +1,33 @@
-summary: A practical, hands-on guide to Git and GitHub for hackathon teams
-id: git-github-hackathon-codelab
+---
+summary: A practical, hands-on guide to Git and GitHub for academic project teams
+id: git-github-academic-codelab
 categories: git, github, version-control
 environments: Web
 status: Published
 feedback link: https://github.com/Tamrakar182/git-codelab/issues
 authors: Manjul Tamrakar
 
-# Git & GitHub: The Hackathon Survival Kit
+# Git & GitHub: The Academic Project Survival Kit
 
 ## Welcome & Why This Matters
 Duration: 0:03:00
 
-You have 48 hours. Your teammate just overwrote your login page with their payment form. The demo is in 20 minutes. Sound familiar?
+Your group project is due in 48 hours. Your teammate just overwrote your login page with their payment form. The submission window closes in 20 minutes. Sound familiar?
 
-This codelab is not about Git theory, it's about **not destroying your project at 3 AM**. By the end of this session, your team will be able to work in parallel, avoid stepping on each other's toes, and ship a working demo with confidence.
+This codelab is not about Git theory, it's about **not destroying your project the night before a deadline**. By the end of this session, your team will be able to work in parallel, avoid stepping on each other's toes, and submit a working project with confidence.
 
 ### What you'll learn
 
 * How Git tracks your code like a time machine.
-* How to use branches so your team never breaks the main app.
+* How to use branches so your team never breaks the main codebase.
 * How to handle merge conflicts without panic.
 * How to use GitHub to sync code across your whole team.
-* A professional Pull Request workflow that scales.
+* A professional Pull Request workflow that scales to any project size.
 
 ### Prerequisites
 
 * A [GitHub](https://github.com) account (free).
-* Git installed on your machine — check with `git --version` in your terminal.
+* Git installed on your machine: check with `git --version` in your terminal.
 * A terminal / command prompt you're comfortable typing in.
 
 > **Not installed?** Download Git from [https://git-scm.com/downloads](https://git-scm.com/downloads). It takes 2 minutes.
@@ -79,21 +80,21 @@ Let's get hands-on. Open your terminal and follow along.
 
 ```bash
 # Create a new project folder
-mkdir hackathon-demo
-cd hackathon-demo
+mkdir group-project
+cd group-project
 
 # Tell Git to start tracking this folder
 git init
 
 # You should see:
-# Initialized empty Git repository in .../hackathon-demo/.git/
+# Initialized empty Git repository in .../group-project/.git/
 ```
 
 ### Step 2: Create a File and Make Your First Commit
 
 ```bash
 # Create a simple file
-echo "# My Hackathon Project" > README.md
+echo "# My Group Project" > README.md
 
 # Check what Git sees
 git status
@@ -122,10 +123,10 @@ If this is your first time using Git on this machine, set your name and email:
 
 ```bash
 git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+git config --global user.email "you@university.edu"
 ```
 
-This information gets stamped on every commit you make, so your teammates know who did what.
+This information gets stamped on every commit you make, so your teammates (and instructors) know who did what.
 
 ### The Core Workflow Loop
 
@@ -143,7 +144,7 @@ git commit -m "feat: add user login validation"
 # 4. Repeat
 ```
 
-> **Hackathon Tip:** Commit early and often. Small commits are easy to undo. A single giant commit at the end is a disaster waiting to happen.
+> **Tip:** Commit early and often. Small commits are easy to undo and demonstrate a clear record of individual contributions. A single giant commit submitted the night before a deadline is a red flag.
 
 ---
 
@@ -154,9 +155,9 @@ This is the most important section of this codelab. **Branching is what makes te
 
 ### The Golden Rule
 
-> **Never commit directly to `main` during a hackathon.**
+> **Never commit directly to `main` during a group project.**
 
-`main` is your demo branch. It should always be in a working, presentable state. All active development happens on separate branches.
+`main` is your submission branch. It should always be in a working, presentable state. All active development happens on separate branches.
 
 ### How Branches Work
 
@@ -270,11 +271,11 @@ git commit -m "fix: resolve merge conflict on login button style"
 
 ### Prevention is Better Than Cure
 
-- **Pull often.** Run `git pull origin main` before you start working each time.
-- **Keep branches short-lived.** Merge feature branches back within a few hours if possible.
+- **Pull often.** Run `git pull origin main` before you start working each session.
+- **Keep branches short-lived.** Merge feature branches back within a day or two if possible.
 - **Communicate.** Tell your teammate before you edit a shared file.
 
-> **Hackathon Tip:** Assign clear ownership of files. "You own the backend routes, I own the frontend components." This dramatically reduces conflicts.
+> **Tip:** Assign clear ownership of files at the start of the project. "You own the backend routes, I own the frontend components." This dramatically reduces conflicts and makes individual contributions easier to attribute.
 
 ---
 
@@ -288,8 +289,8 @@ Git is local (lives on your machine). **GitHub** is the shared cloud where your 
 One person on your team should:
 
 1. Go to [github.com](https://github.com) and click **"New repository"**.
-2. Name it (e.g., `hackathon-2025`).
-3. Set it to **Private** (unless you want it public).
+2. Name it (e.g., `cs301-group-project`).
+3. Set it to **Private** (recommended for coursework).
 4. **Do not** initialize with a README (you already have one locally).
 5. Click **Create repository**.
 
@@ -299,7 +300,7 @@ After creating the repo on GitHub, connect your local project:
 
 ```bash
 # Add GitHub as the "origin" remote
-git remote add origin https://github.com/YOUR_USERNAME/hackathon-2025.git
+git remote add origin https://github.com/YOUR_USERNAME/cs301-group-project.git
 
 # Rename your branch to main (if it's called master)
 git branch -M main
@@ -325,25 +326,25 @@ At the start of every work session, pull the latest changes:
 git pull origin main
 ```
 
-This brings any changes your teammates pushed while you were sleeping (or eating) down to your machine.
+This brings any changes your teammates pushed since your last session down to your machine.
 
 ### Cloning the Repo (for teammates)
 
 Teammates who didn't create the repo should clone it:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/hackathon-2025.git
-cd hackathon-2025
+git clone https://github.com/YOUR_USERNAME/cs301-group-project.git
+cd cs301-group-project
 ```
 
 This downloads the entire repository including all history.
 
 ---
 
-## Pull Requests: Code Review at Hackathon Speed
+## Pull Requests: Code Review Made Simple
 Duration: 0:10:00
 
-A **Pull Request (PR)** is how you propose merging your feature branch into `main`. Even at a hackathon, PRs are worth it — they give your teammate 60 seconds to catch a bug before it hits the demo.
+A **Pull Request (PR)** is how you propose merging your feature branch into `main`. Even on a tight deadline, they give a teammate 60 seconds to catch a bug before it ends up in your submission.
 
 ### Opening a Pull Request
 
@@ -365,7 +366,7 @@ Your teammate opens the PR, looks at the **Files changed** tab, and either:
 - **Approves** it and clicks **Merge pull request**, or
 - **Requests changes** by leaving a comment.
 
-At a hackathon, aim for reviews under 5 minutes. The goal is a quick sanity check, not a dissertation.
+Keep reviews focused and constructive. The goal is a quick sanity check to ensure the feature works and doesn't break anything else.
 
 ### After Merging
 
@@ -389,7 +390,7 @@ Before opening a PR, ask yourself:
 ## Emergency Commands
 Duration: 0:05:00
 
-When things go sideways at 4 AM, stay calm and use these:
+When things go sideways the night before a submission, stay calm and use these:
 
 ### Stashing: Temporarily Hide Your Work
 
@@ -449,7 +450,7 @@ git reset --soft HEAD~1
 ## Team Workflow Playbook
 Duration: 0:05:00
 
-Here's the complete workflow your team should follow from the moment the hackathon starts:
+Here's the complete workflow your team should follow from the moment the project kicks off:
 
 ### Setup (Do Once, Together)
 
@@ -465,7 +466,7 @@ git push -u origin main
 git clone https://github.com/team/repo.git
 ```
 
-### Every Feature (Repeat Throughout the Hackathon)
+### Every Feature (Repeat Throughout the Project)
 
 ```bash
 # 1. Start fresh from main
@@ -490,7 +491,7 @@ git pull origin main
 
 ### Divide and Conquer
 
-At the start of the hackathon, split your codebase by ownership:
+At the start of the project, split your codebase by ownership:
 
 | Person | Owns |
 |---|---|
@@ -498,14 +499,14 @@ At the start of the hackathon, split your codebase by ownership:
 | Backend Dev | `api/`, `models/`, `routes/` |
 | Full Stack | `config/`, shared utilities |
 
-This reduces the chance of merge conflicts dramatically.
+This reduces the chance of merge conflicts dramatically and makes it straightforward for each member to demonstrate their individual contributions.
 
 ---
 
 ## Conclusion
 Duration: 0:02:00
 
-You now have everything you need to collaborate like a professional engineering team, even at 48-hour hackathon speed.
+You now have everything you need to collaborate like a professional engineering team, even under tight deadlines.
 
 ### What we've covered
 
@@ -519,7 +520,7 @@ You now have everything you need to collaborate like a professional engineering 
 
 ### The Three Rules to Remember
 
-1. **Commit often.** Small checkpoints save you from big disasters.
+1. **Commit often.** Small checkpoints save you from big disasters and build a clear record of your work.
 2. **Branch always.** Every feature, every fix must be its own branch.
 3. **Pull before you push.** Always sync before you start working.
 

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>Git &amp; GitHub: The Hackathon Survival Kit</title>
+  <title>Git &amp; GitHub: The Academic Project Survival Kit</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
@@ -23,21 +23,21 @@
   <google-codelab-analytics gaid="UA-49880327-14" ga4id=""></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   codelab-ga4id=""
-                  id="git-github-hackathon-codelab"
-                  title="Git &amp; GitHub: The Hackathon Survival Kit"
+                  id="git-github-academic-codelab"
+                  title="Git &amp; GitHub: The Academic Project Survival Kit"
                   environment="web"
                   feedback-link="https://github.com/Tamrakar182/git-codelab/issues">
     
       <google-codelab-step label="Welcome &amp; Why This Matters" duration="3">
-        <p>You have 48 hours. Your teammate just overwrote your login page with their payment form. The demo is in 20 minutes. Sound familiar?</p>
-<p>This codelab is not about Git theory, it&#39;s about <strong>not destroying your project at 3 AM</strong>. By the end of this session, your team will be able to work in parallel, avoid stepping on each other&#39;s toes, and ship a working demo with confidence.</p>
+        <p>Your group project is due in 48 hours. Your teammate just overwrote your login page with their payment form. The submission window closes in 20 minutes. Sound familiar?</p>
+<p>This codelab is not about Git theory — it&#39;s about <strong>not destroying your project the night before a deadline</strong>. By the end of this session, your team will be able to work in parallel, avoid stepping on each other&#39;s toes, and submit a working project with confidence.</p>
 <h2 class="checklist" is-upgraded>What you&#39;ll learn</h2>
 <ul class="checklist">
 <li>How Git tracks your code like a time machine.</li>
-<li>How to use branches so your team never breaks the main app.</li>
+<li>How to use branches so your team never breaks the main codebase.</li>
 <li>How to handle merge conflicts without panic.</li>
 <li>How to use GitHub to sync code across your whole team.</li>
-<li>A professional Pull Request workflow that scales.</li>
+<li>A professional Pull Request workflow that scales to any project size.</li>
 </ul>
 <h2 is-upgraded>Prerequisites</h2>
 <ul>
@@ -90,18 +90,18 @@
         <p>Let&#39;s get hands-on. Open your terminal and follow along.</p>
 <h2 is-upgraded>Step 1: Initialize a Local Repo</h2>
 <pre><code language="language-bash" class="language-bash"># Create a new project folder
-mkdir hackathon-demo
-cd hackathon-demo
+mkdir group-project
+cd group-project
 
 # Tell Git to start tracking this folder
 git init
 
 # You should see:
-# Initialized empty Git repository in .../hackathon-demo/.git/
+# Initialized empty Git repository in .../group-project/.git/
 </code></pre>
 <h2 is-upgraded>Step 2: Create a File and Make Your First Commit</h2>
 <pre><code language="language-bash" class="language-bash"># Create a simple file
-echo &#34;# My Hackathon Project&#34; &gt; README.md
+echo &#34;# My Group Project&#34; &gt; README.md
 
 # Check what Git sees
 git status
@@ -124,9 +124,9 @@ git commit -m &#34;docs: initial commit with README&#34;
 <h2 is-upgraded>Configuring Your Identity (One-time Setup)</h2>
 <p>If this is your first time using Git on this machine, set your name and email:</p>
 <pre><code language="language-bash" class="language-bash">git config --global user.name &#34;Your Name&#34;
-git config --global user.email &#34;you@example.com&#34;
+git config --global user.email &#34;you@university.edu&#34;
 </code></pre>
-<p>This information gets stamped on every commit you make, so your teammates know who did what.</p>
+<p>This information gets stamped on every commit you make, so your teammates (and instructors) know who did what.</p>
 <h2 is-upgraded>The Core Workflow Loop</h2>
 <p>Every feature, every bug fix, every change follows this loop:</p>
 <pre><code language="language-bash" class="language-bash"># 1. Make your code changes
@@ -139,7 +139,7 @@ git commit -m &#34;feat: add user login validation&#34;
 
 # 4. Repeat
 </code></pre>
-<p><strong>Hackathon Tip:</strong> Commit early and often. Small commits are easy to undo. A single giant commit at the end is a disaster waiting to happen.</p>
+<p><strong>Tip:</strong> Commit early and often. Small commits are easy to undo and demonstrate a clear record of individual contributions. A single giant commit submitted the night before a deadline is a red flag.</p>
 
 
       </google-codelab-step>
@@ -149,8 +149,8 @@ git commit -m &#34;feat: add user login validation&#34;
 <h2 is-upgraded>The Golden Rule</h2>
 <p><strong>Never commit directly to </strong></p>
 <p><strong><code>main</code></strong></p>
-<p><strong> during a hackathon.</strong></p>
-<p><code>main</code> is your demo branch. It should always be in a working, presentable state. All active development happens on separate branches.</p>
+<p><strong> during a group project.</strong></p>
+<p><code>main</code> is your submission branch. It should always be in a working, presentable state. All active development happens on separate branches.</p>
 <h2 is-upgraded>How Branches Work</h2>
 <p>A branch is just a lightweight pointer to a specific commit. Creating one is instant and costs almost nothing.</p>
 <pre><code>main:           A --- B --- C
@@ -239,11 +239,11 @@ git commit -m &#34;fix: resolve merge conflict on login button style&#34;
 </code></pre>
 <h2 is-upgraded>Prevention is Better Than Cure</h2>
 <ul>
-<li><strong>Pull often.</strong> Run <code>git pull origin main</code> before you start working each time.</li>
-<li><strong>Keep branches short-lived.</strong> Merge feature branches back within a few hours if possible.</li>
+<li><strong>Pull often.</strong> Run <code>git pull origin main</code> before you start working each session.</li>
+<li><strong>Keep branches short-lived.</strong> Merge feature branches back within a day or two if possible.</li>
 <li><strong>Communicate.</strong> Tell your teammate before you edit a shared file.</li>
 </ul>
-<p><strong>Hackathon Tip:</strong> Assign clear ownership of files. &#34;You own the backend routes, I own the frontend components.&#34; This dramatically reduces conflicts.</p>
+<p><strong>Tip:</strong> Assign clear ownership of files at the start of the project. &#34;You own the backend routes, I own the frontend components.&#34; This dramatically reduces conflicts and makes individual contributions easier to attribute.</p>
 
 
       </google-codelab-step>
@@ -254,15 +254,15 @@ git commit -m &#34;fix: resolve merge conflict on login button style&#34;
 <p>One person on your team should:</p>
 <ol type="1">
 <li>Go to <a href="https://github.com" target="_blank">github.com</a> and click <strong>&#34;New repository&#34;</strong>.</li>
-<li>Name it (e.g., <code>hackathon-2025</code>).</li>
-<li>Set it to <strong>Private</strong> (unless you want it public).</li>
+<li>Name it (e.g., <code>cs301-group-project</code>).</li>
+<li>Set it to <strong>Private</strong> (recommended for coursework).</li>
 <li><strong>Do not</strong> initialize with a README (you already have one locally).</li>
 <li>Click <strong>Create repository</strong>.</li>
 </ol>
 <h2 is-upgraded>Connecting Local to Remote</h2>
 <p>After creating the repo on GitHub, connect your local project:</p>
 <pre><code language="language-bash" class="language-bash"># Add GitHub as the &#34;origin&#34; remote
-git remote add origin https://github.com/YOUR_USERNAME/hackathon-2025.git
+git remote add origin https://github.com/YOUR_USERNAME/cs301-group-project.git
 
 # Rename your branch to main (if it&#39;s called master)
 git branch -M main
@@ -282,19 +282,19 @@ git push -u origin main
 <p>At the start of every work session, pull the latest changes:</p>
 <pre><code language="language-bash" class="language-bash">git pull origin main
 </code></pre>
-<p>This brings any changes your teammates pushed while you were sleeping (or eating) down to your machine.</p>
+<p>This brings any changes your teammates pushed since your last session down to your machine.</p>
 <h2 is-upgraded>Cloning the Repo (for teammates)</h2>
 <p>Teammates who didn&#39;t create the repo should clone it:</p>
-<pre><code language="language-bash" class="language-bash">git clone https://github.com/YOUR_USERNAME/hackathon-2025.git
-cd hackathon-2025
+<pre><code language="language-bash" class="language-bash">git clone https://github.com/YOUR_USERNAME/cs301-group-project.git
+cd cs301-group-project
 </code></pre>
 <p>This downloads the entire repository including all history.</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Pull Requests: Code Review at Hackathon Speed" duration="10">
-        <p>A <strong>Pull Request (PR)</strong> is how you propose merging your feature branch into <code>main</code>. Even at a hackathon, PRs are worth it — they give your teammate 60 seconds to catch a bug before it hits the demo.</p>
+      <google-codelab-step label="Pull Requests: Code Review Made Simple" duration="10">
+        <p>A <strong>Pull Request (PR)</strong> is how you propose merging your feature branch into <code>main</code>. Even on a tight deadline, they give a teammate 60 seconds to catch a bug before it ends up in your submission.</p>
 <h2 is-upgraded>Opening a Pull Request</h2>
 <p>After pushing your branch:</p>
 <pre><code language="language-bash" class="language-bash">git push origin feature/payment-form
@@ -312,7 +312,7 @@ cd hackathon-2025
 <li><strong>Approves</strong> it and clicks <strong>Merge pull request</strong>, or</li>
 <li><strong>Requests changes</strong> by leaving a comment.</li>
 </ul>
-<p>At a hackathon, aim for reviews under 5 minutes. The goal is a quick sanity check, not a dissertation.</p>
+<p>Keep reviews focused and constructive. The goal is a quick sanity check to ensure the feature works and doesn&#39;t break anything else.</p>
 <h2 is-upgraded>After Merging</h2>
 <p>Once the PR is merged into <code>main</code>, delete the feature branch (GitHub offers a button for this), and update your local main:</p>
 <pre><code language="language-bash" class="language-bash">git checkout main
@@ -331,7 +331,7 @@ git pull origin main
       </google-codelab-step>
     
       <google-codelab-step label="Emergency Commands" duration="5">
-        <p>When things go sideways at 4 AM, stay calm and use these:</p>
+        <p>When things go sideways the night before a submission, stay calm and use these:</p>
 <h2 is-upgraded>Stashing: Temporarily Hide Your Work</h2>
 <p>Need to pull new changes but your work isn&#39;t ready to commit yet?</p>
 <pre><code language="language-bash" class="language-bash"># Hide your current changes
@@ -396,7 +396,7 @@ git reset --soft HEAD~1
       </google-codelab-step>
     
       <google-codelab-step label="Team Workflow Playbook" duration="5">
-        <p>Here&#39;s the complete workflow your team should follow from the moment the hackathon starts:</p>
+        <p>Here&#39;s the complete workflow your team should follow from the moment the project kicks off:</p>
 <h2 is-upgraded>Setup (Do Once, Together)</h2>
 <pre><code language="language-bash" class="language-bash"># Person A: creates the repo on GitHub and pushes initial code
 git init
@@ -408,7 +408,7 @@ git push -u origin main
 # Persons B, C, D: clone the repo
 git clone https://github.com/team/repo.git
 </code></pre>
-<h2 is-upgraded>Every Feature (Repeat Throughout the Hackathon)</h2>
+<h2 is-upgraded>Every Feature (Repeat Throughout the Project)</h2>
 <pre><code language="language-bash" class="language-bash"># 1. Start fresh from main
 git checkout main
 git pull origin main
@@ -429,7 +429,7 @@ git checkout main
 git pull origin main
 </code></pre>
 <h2 is-upgraded>Divide and Conquer</h2>
-<p>At the start of the hackathon, split your codebase by ownership:</p>
+<p>At the start of the project, split your codebase by ownership:</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>Person</p>
 </td><td colspan="1" rowspan="1"><p>Owns</p>
@@ -444,13 +444,13 @@ git pull origin main
 </td><td colspan="1" rowspan="1"><p><code>config/</code>, shared utilities</p>
 </td></tr>
 </table>
-<p>This reduces the chance of merge conflicts dramatically.</p>
+<p>This reduces the chance of merge conflicts dramatically and makes it straightforward for each member to demonstrate their individual contributions.</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Conclusion" duration="2">
-        <p>You now have everything you need to collaborate like a professional engineering team, even at 48-hour hackathon speed.</p>
+        <p>You now have everything you need to collaborate like a professional engineering team, even under tight deadlines.</p>
 <h2 class="checklist" is-upgraded>What we&#39;ve covered</h2>
 <ul class="checklist">
 <li>Git&#39;s three zones: Working Directory, Staging Area, and Repository.</li>
@@ -463,7 +463,7 @@ git pull origin main
 </ul>
 <h2 is-upgraded>The Three Rules to Remember</h2>
 <ol type="1">
-<li><strong>Commit often.</strong> Small checkpoints save you from big disasters.</li>
+<li><strong>Commit often.</strong> Small checkpoints save you from big disasters and build a clear record of your work.</li>
 <li><strong>Branch always.</strong> Every feature, every fix must be its own branch.</li>
 <li><strong>Pull before you push.</strong> Always sync before you start working.</li>
 </ol>
